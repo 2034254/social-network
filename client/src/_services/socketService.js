@@ -6,7 +6,8 @@ export const socketService = {
 //window.location.hostname
 function connect() {
   return new Promise((resolve, reject) => {
-    const socket = io(window.location.hostname, {
+    console.log('window.location.hostname: ', window.location.hostname);
+    const socket = io(window.location.hostname + ":3000", {
       query: { token: JSON.parse(localStorage.getItem("user")).token },
     });
     socket.on("connect", () => {
