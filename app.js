@@ -8,7 +8,7 @@ const path = require("path");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const fs = require("fs");
-require("dotenv").config({ path: "variables.env" });
+require("dotenv").config({ path: ".env" });
 
 // connect to DB
 mongoose.connect(process.env.DATABASE, {
