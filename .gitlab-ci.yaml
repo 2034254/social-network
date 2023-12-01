@@ -1,0 +1,22 @@
+stages:
+  - install
+  - build
+  - documentation
+
+cache:
+  paths:
+    - node_modules/
+
+install-job:
+  stage: install
+  script:
+    - npm ci
+
+build-job:
+  stage: build
+  script: "Building..."
+
+doc-job:
+  stage: documentation
+  script:
+    - echo "Documenting..."
