@@ -1,0 +1,51 @@
+stages:
+  - install
+  - lint
+  - test
+  - build
+
+cache:
+  paths:
+    - node_modules/
+
+install-job:
+  stage:  install
+  script:
+    - npm ci
+
+lint-job:
+  stage: lint
+  script:
+    - echo "Linting..."
+    - npm run lint
+  artifacts:
+    name: "lint"
+    paths:
+      - lintArtifiacts/
+    untracked: true
+    when: on_success
+
+test-job:
+  stage: test
+  script:
+    - echo "Testing..."
+    - npm run test
+  artifacts:
+    name: "test"
+    paths:
+      - testArtifacts/
+    untracked: true
+    when: on_success
+
+build-job:
+  stage: build
+  script: 
+    - echo "Building..."
+    - npm run build
+    - npm run bundle
+  artifacts:
+    name: "build"
+    paths:
+    - dist/bundle.zip
+  untracked: true
+
