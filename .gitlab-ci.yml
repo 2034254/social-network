@@ -47,6 +47,4 @@ build-job:
     name: "build"
     paths:
     - dist/bundle.zip
-  untracked: true
-
-
+    untracked: true

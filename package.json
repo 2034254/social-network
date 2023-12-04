@@ -11,6 +11,7 @@
     "lint": "eslint .",
     "dev-lint": "eslint . --fix"
 
+    
   },
   "dependencies": {
     "@hapi/joi": "^16.1.8",
