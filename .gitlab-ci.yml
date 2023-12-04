@@ -9,7 +9,7 @@ cache:
     - node_modules/
 
 install-job:
-  stage:  install
+  stage: install
   script:
     - npm ci
     - cd client && npm ci
