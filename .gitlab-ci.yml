@@ -11,7 +11,7 @@ cache:
 install-job:
   stage: install
   script:
-    - "Installing..."
+    - echo "Installing..."
 
 lint-job:
   stage: lint
