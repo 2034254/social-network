@@ -11,8 +11,7 @@ cache:
 install-job:
   stage: install
   script:
-    - npm ci
-    - cd client && npm ci
+    - "Installing..."
 
 lint-job:
   stage: lint
