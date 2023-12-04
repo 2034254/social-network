@@ -12,7 +12,7 @@ install-job:
   stage:  install
   script:
     - npm ci
-    - npm cd client && npm ci
+    - cd client && npm ci
 
 lint-job:
   stage: lint
