@@ -7,7 +7,7 @@ exports.readNotifications = (req, res) => {
     { $set: { read: true } },
     { multi: true }
   )
-    .then(result => {
+    .then(() => {
       res.status(200).json({ read: "notifications" });
     })
     .catch(err => {

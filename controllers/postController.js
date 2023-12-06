@@ -650,7 +650,7 @@ exports.likePost = (req, res) => {
       );
 
       Promise.all([postLike, user])
-        .then((values) => {
+        .then(() => {
           return res
             .status(200)
             .json({ postId: req.body.postId, action: "disliked" });

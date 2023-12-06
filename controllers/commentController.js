@@ -483,7 +483,7 @@ exports.likeComment = (req, res) => {
       );
 
       Promise.all([commentLike, user])
-        .then(values => {
+        .then(() => {
           return res.status(200).json({
             commentId: req.body.commentId,
             postId: req.body.postId,
@@ -564,7 +564,7 @@ exports.likeCommentReply = (req, res) => {
       );
 
       Promise.all([commentReplyLike, user])
-        .then(values => {
+        .then(() => {
           return res.status(200).json({
             commentId: req.body.commentId,
             parentId: req.body.commentAt,

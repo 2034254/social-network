@@ -21,8 +21,7 @@ export function ModalForLoggedIn({ postId }) {
   );
 }
 
-export function ModalForLoggedIn({ postId }) {
-  
+export function AnotherModalForLoggedIn({ postId }) {
     return (
       <Modal trigger={<Icon name="ellipsis horizontal" />}>
         <Modal.Content>

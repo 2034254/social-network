@@ -410,7 +410,7 @@ exports.loginUser = (req, res, next) => {
 };
 
 exports.deleteUser = (req, res) => {
-  User.remove({ _id: req.userData.userId }).then((result) => {
+  User.remove({ _id: req.userData.userId }).then(() => {
     res
       .status(200)
       .json({

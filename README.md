@@ -68,19 +68,19 @@ npm i && cd client && npm i && cd ..
 
 ```
 NODE_ENV=development
-DATABASE="Mongodb Connection String"
+DATABASE="mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/finalProject"
 JWT_KEY="secretkey"
 EMAILUSER="example@gmail.com"
 EMAILPASS="example"
-HOST="your ip eg. http://192.168.0.14:5000"
-ENABLE_SEND_EMAIL="true or false" // false if you don't want to set it up
-TEST_DATABASE="testing db"
+HOST="localhost:5000"
+ENABLE_SEND_EMAIL="false"
+TEST_DATABASE="mongodb://localhost:27017/test"
 ```
 
-3. Go into `client/src/_services/socketService.js` and replace
+```3. Go into `client/src/_services/socketService.js` and replace```
 
 ```
-window.location.hostname
+# window.location.hostname
 ```
 
 with your local IP address on port 5000 eg.
