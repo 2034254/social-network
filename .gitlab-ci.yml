@@ -36,7 +36,7 @@ test-job:
     #- npm ci --production=false
     #- uri=$TEST_DATABASE npm run test
     - npm install
-    - TEST_DATABASE=mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test npx mocha --recursive --exit --timeout 20000 --reporter mochawesome --reporter-options reportDir=./testArtifact
+    - npx TEST_DATABASE=mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test mocha --recursive --exit --timeout 20000 --reporter mochawesome --reporter-options reportDir=./testArtifact
   artifacts:
     name: "test"
     paths:
