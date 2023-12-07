@@ -8,8 +8,8 @@
     "client": "npm start --prefix client",
     "test": "mocha --recursive --exit --timeout 10000",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "lint": "eslint .",
-    "dev-lint": "eslint . --fix"
+    "lint": "npx eslint .",
+    "dev-lint": "npx eslint . --fix"
   },
   "dependencies": {
     "@hapi/joi": "^16.1.8",
