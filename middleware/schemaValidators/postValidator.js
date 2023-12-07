@@ -11,7 +11,7 @@ exports.getPosts = (req, res, next) => {
     })
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -23,7 +23,7 @@ exports.getPostLikes = (req, res, next) => {
     postId: Joi.objectId().required()
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -43,7 +43,7 @@ exports.getPostsByHashtag = (req, res, next) => {
     })
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -63,7 +63,7 @@ exports.getPostsByLocation = (req, res, next) => {
     })
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -75,7 +75,7 @@ exports.getPost = (req, res, next) => {
     postId: Joi.objectId().required()
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -88,7 +88,7 @@ exports.likePost = (req, res, next) => {
     authorId: Joi.objectId().required()
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -100,7 +100,7 @@ exports.deletePost = (req, res, next) => {
     postId: Joi.objectId().required()
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -125,7 +125,7 @@ exports.createPost = (req, res, next) => {
     photo: Joi.string().required()
   });
 
-  const { error, value } = schema.validate(validateObject);
+  const { error } = schema.validate(validateObject);
   if (error) {
     return res.status(400).json({ message: error.message });
   }

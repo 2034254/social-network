@@ -6,7 +6,7 @@ exports.readNotifications = (req, res, next) => {
     notificationIds: Joi.array().required()
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -23,7 +23,7 @@ exports.getNotifications = (req, res, next) => {
     })
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }

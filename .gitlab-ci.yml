@@ -13,6 +13,8 @@ install-job:
   script:
     - npm ci
     - cd client && npm ci
+    - npm install eslint@latest
+    - npm install eslint-plugin-react@latest --save-dev
 
 #lint-job:
   # stage: lint

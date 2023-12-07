@@ -12,7 +12,7 @@ exports.getComments = (req, res, next) => {
     })
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -30,7 +30,7 @@ exports.getCommentReplies = (req, res, next) => {
     })
   });
 
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -43,7 +43,7 @@ exports.addComment = (req, res, next) => {
     postId: Joi.objectId().required(),
     authorId: Joi.objectId().required()
   });
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -57,7 +57,7 @@ exports.addCommentReply = (req, res, next) => {
     postId: Joi.objectId().required(),
     authorId: Joi.objectId().required()
   });
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -68,7 +68,7 @@ exports.getCommentLikes = (req, res, next) => {
   const schema = Joi.object({
     commentId: Joi.objectId().required()
   });
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -79,7 +79,7 @@ exports.getCommentReplyLikes = (req, res, next) => {
   const schema = Joi.object({
     commentId: Joi.objectId().required()
   });
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -92,7 +92,7 @@ exports.likeComment = (req, res, next) => {
     authorId: Joi.objectId().required(),
     postId: Joi.objectId().required()
   });
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
@@ -106,7 +106,7 @@ exports.likeCommentReply = (req, res, next) => {
     authorId: Joi.objectId().required(),
     postId: Joi.objectId().required()
   });
-  const { error, value } = schema.validate(req.body);
+  const { error } = schema.validate(req.body);
   if (error) {
     return res.status(400).json({ message: error.message });
   }
