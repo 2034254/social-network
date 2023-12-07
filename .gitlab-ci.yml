@@ -11,7 +11,7 @@ cache:
 install-job:
   stage: install
   script:
-    - npm ci
+    - npm ci --production=false
     - cd client && npm ci
     - npm install eslint@latest
     - npm install eslint-plugin-react@latest --save-dev

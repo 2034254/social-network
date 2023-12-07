@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "server": "nodemon ./bin/www",
     "client": "npm start --prefix client",
-    "test": "npx mocha --recursive --exit --timeout 10000",
+    "test": "mocha --recursive --exit --timeout 10000",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "lint": "eslint .",
     "dev-lint": "eslint . --fix",
