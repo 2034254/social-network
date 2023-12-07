@@ -32,6 +32,7 @@ test-job:
   stage: test
   script:
     - echo "Testing..."
+    - npm install -g mocha
     - npm run test
   artifacts:
     name: "test"
