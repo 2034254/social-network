@@ -9,7 +9,8 @@
     "test": "mocha --recursive --exit --timeout 10000",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "lint": "eslint .",
-    "dev-lint": "eslint . --fix"
+    "dev-lint": "eslint . --fix",
+    "doc": "npx jsdoc -c jsdoc.json -r"
 
     
   },

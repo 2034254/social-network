@@ -1,0 +1,8 @@
+{
+    "source": {
+      "include": ["routes/*.js"]
+    },
+    "opts": {
+      "destination": "docs/"
+    }
+  }
