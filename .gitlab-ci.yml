@@ -25,7 +25,7 @@ lint-job:
   artifacts:
     name: "lint"
     paths:
-      - ./lintArtifact/eslint-report.json
+      - ./lintArtifact/eslint-report.html
     untracked: true
     when: on_success
 
@@ -33,8 +33,9 @@ test-job:
   stage: test
   script:
     - echo "Testing..."
-    - npm ci --production=false
-    - uri=$TEST_DATABASE npm run test
+    #- npm ci --production=false
+    #- uri=$TEST_DATABASE npm run test
+    - npm run test
   artifacts:
     name: "test"
     paths:
