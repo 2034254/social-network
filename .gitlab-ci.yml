@@ -35,8 +35,9 @@ test-job:
     - echo "Testing..."
     #- npm ci --production=false
     #- uri=$TEST_DATABASE npm run test
+    - echo "MY_VARIABLE:$TEST_DATABASE"
     - npm install
-    - npx TEST_DATABASE=mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test mocha --recursive --exit --timeout 20000 --reporter mochawesome --reporter-options reportDir=./testArtifact
+    - npm run test
   artifacts:
     name: "test"
     paths:
