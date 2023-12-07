@@ -8,14 +8,9 @@
     "client": "npm start --prefix client",
     "test": "mocha --recursive --exit --timeout 10000",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-<<<<<<< HEAD
     "lint": "npx eslint . --format json --output-file ./lintArtifact/eslint-report.json",
-    "dev-lint": "npx eslint . --fix"
-=======
-    "lint": "eslint .",
-    "dev-lint": "eslint . --fix",
+    "dev-lint": "npx eslint . --fix",
     "doc": "npx jsdoc -c jsdoc.json -r"
->>>>>>> 95feb24f5725d4727c9f7e1d75fcc32d6e7769c8
   },
   "dependencies": {
     "@hapi/joi": "^16.1.8",
@@ -41,13 +36,9 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-<<<<<<< HEAD
     "chai": "^4.2.0",
     "eslint": "^8.55.0",
     "eslint-plugin-react": "^7.33.2",
-=======
-    "chai": "^4.3.10",
->>>>>>> 95feb24f5725d4727c9f7e1d75fcc32d6e7769c8
     "mocha": "^7.2.0",
     "supertest": "^4.0.2"
   }
