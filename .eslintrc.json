@@ -2,7 +2,8 @@
     "env": {
         "node": true,
         "commonjs": true,
-        "es2021": true
+        "es2021": true,
+        "mocha": true
     },
     "extends": [
         "eslint:recommended",
@@ -17,5 +18,5 @@
     "rules": {
         "no-unused-vars": ["warn", { "varsIgnorePattern": "value"}]
     },
-    "ignorePatterns": ["test/"]
+    "ignorePatterns": ["client/"]
 }
