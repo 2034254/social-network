@@ -4,6 +4,9 @@ stages:
   - test
   - build
 
+  variables:
+    TEST_DATABASE: "mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test"
+
 cache:
   paths:
     - node_modules/
