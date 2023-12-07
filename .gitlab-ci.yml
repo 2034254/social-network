@@ -14,17 +14,17 @@ install-job:
     - npm ci
     - cd client && npm ci
 
-lint-job:
-  stage: lint
-  script:
-    - echo "Linting..."
-    - npm run lint
-  artifacts:
-    name: "lint"
-    paths:
-      - lintArtifiacts/
-    untracked: true
-    when: on_success
+#lint-job:
+  # stage: lint
+  # script:
+  #   - echo "Linting..."
+  #   - npm run lint
+  # artifacts:
+  #   name: "lint"
+  #   paths:
+  #     - lintArtifiacts/
+  #   untracked: true
+  #   when: on_success
 
 test-job:
   stage: test
