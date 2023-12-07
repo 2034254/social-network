@@ -11,7 +11,7 @@ cache:
 install-job:
   stage: install
   script:
-    - npm i
+    - npm ci
     - cd client && npm ci
     - npm install eslint@latest
     - npm install eslint-plugin-react@latest --save-dev
@@ -32,8 +32,8 @@ test-job:
   stage: test
   script:
     - echo "Testing..."
-    - npm i -g chai
-    - mocha --recursive --exit --timeout 10000
+    - npm ci --production=false
+    - npm run test
   artifacts:
     name: "test"
     paths:
