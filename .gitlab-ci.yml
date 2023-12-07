@@ -16,20 +16,18 @@ install-job:
   script:
     - npm ci
     - cd client && npm ci
-    - npm install eslint@latest
-    - npm install eslint-plugin-react@latest --save-dev
 
-#lint-job:
-  # stage: lint
-  # script:
-  #   - echo "Linting..."
-  #   - npm run lint
-  # artifacts:
-  #   name: "lint"
-  #   paths:
-  #     - lintArtifiacts/
-  #   untracked: true
-  #   when: on_success
+lint-job:
+  stage: lint
+  script:
+    - echo "Linting..."
+    - npm run lint
+  artifacts:
+    name: "lint"
+    paths:
+      - ./lintArtifact/eslint-report.json
+    untracked: true
+    when: on_success
 
 test-job:
   stage: test
