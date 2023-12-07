@@ -11,8 +11,6 @@
     "lint": "eslint .",
     "dev-lint": "eslint . --fix",
     "doc": "npx jsdoc -c jsdoc.json -r"
-
-    
   },
   "dependencies": {
     "@hapi/joi": "^16.1.8",
@@ -39,7 +37,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^7.1.2",
+    "mocha": "^7.2.0",
     "supertest": "^4.0.2"
   }
 }
