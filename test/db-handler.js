@@ -5,9 +5,7 @@ const mongoose = require("mongoose");
  */
 
 module.exports.connect = async () => {
-  const uri = process.env.TEST_DATABASE;
-  console.log("DB URI:", process.env.TEST_DATABASE);
-
+  const uri = "mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test";
 
   const mongooseOpts = {
     useNewUrlParser: true,
