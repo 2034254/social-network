@@ -33,7 +33,6 @@ test-job:
   script:
     - echo "Testing..."
     - npm install -g mocha
-    - npm install -g chai
     - npm run test
   artifacts:
     name: "test"
