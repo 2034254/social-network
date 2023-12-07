@@ -35,7 +35,7 @@ test-job:
     - echo "Testing..."
     #- npm ci --production=false
     #- uri=$TEST_DATABASE npm run test
-    #- npm install
+    - npm install
     - npm run test
   artifacts:
     name: "test"
