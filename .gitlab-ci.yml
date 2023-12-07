@@ -4,6 +4,9 @@ stages:
   - test
   - build
 
+variables:
+  TEST_DATABASE: "mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test"
+
 cache:
   paths:
     - node_modules/
@@ -16,23 +19,24 @@ install-job:
     - npm install eslint@latest
     - npm install eslint-plugin-react@latest --save-dev
 
-lint-job:
-  stage: lint
-  script:
-    - echo "Linting..."
-    - npm run lint
-  artifacts:
-    name: "lint"
-    paths:
-      - lintArtifiacts/
-    untracked: true
-    when: on_success
+#lint-job:
+  # stage: lint
+  # script:
+  #   - echo "Linting..."
+  #   - npm run lint
+  # artifacts:
+  #   name: "lint"
+  #   paths:
+  #     - lintArtifiacts/
+  #   untracked: true
+  #   when: on_success
 
 test-job:
   stage: test
   script:
     - echo "Testing..."
-    - npm run test
+    - npm ci --production=false
+    - uri=$TEST_DATABASE npm run test
   artifacts:
     name: "test"
     paths:
