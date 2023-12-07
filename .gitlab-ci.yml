@@ -35,6 +35,7 @@ test-job:
     - echo "Testing..."
     #- npm ci --production=false
     #- uri=$TEST_DATABASE npm run test
+    - echo "MY_VARIABLE:$TEST_DATABASE"
     - npm install
     - npm run test
   artifacts:
