@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 
 module.exports.connect = async () => {
   const uri = process.env.TEST_DATABASE;
+  console.log("DB URI:", process.env.TEST_DATABASE);
+
 
   const mongooseOpts = {
     useNewUrlParser: true,
