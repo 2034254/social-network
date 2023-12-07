@@ -32,7 +32,7 @@ test-job:
   stage: test
   script:
     - echo "Testing..."
-    - npm run test
+    - mocha --recursive --exit --timeout 10000
   artifacts:
     name: "test"
     paths:
