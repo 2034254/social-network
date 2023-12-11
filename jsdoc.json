@@ -1,6 +1,6 @@
 {
     "source": {
-      "include": ["controllers/"],
+      "include": ["dist/"],
       "exclude": ["node_modules"]
     },
     "opts": {
