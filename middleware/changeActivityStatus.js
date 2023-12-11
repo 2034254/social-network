@@ -27,7 +27,7 @@ module.exports = (req, res, next) => {
     { new: true }
   )
     .select("activityStatus username")
-    .then((user) => {
+    .then(() => {
       next();
     })
     .catch(err => {

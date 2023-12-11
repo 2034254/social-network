@@ -16,7 +16,7 @@
         "react"
     ],
     "rules": {
-        "no-unused-vars": ["warn", { "varsIgnorePattern": "value"}]
+        "no-unused-vars": ["warn", { "varsIgnorePattern": "value|user"}]
     },
     "ignorePatterns": ["client/", "testArtifact/", "lintArtifact/"]
 }

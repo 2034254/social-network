@@ -67,5 +67,5 @@ build-job:
   artifacts:
     name: "build"
     paths:
-    - dist/bundle.zip
+      - dist/bundle.zip
     untracked: true
