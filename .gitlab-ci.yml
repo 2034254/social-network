@@ -37,7 +37,7 @@ doc-job:
   artifacts:
     name: "documentation"
     paths:
-      - docs/*
+      - ./docs/docArtifact
     untracked: true
     when: on_success
 
