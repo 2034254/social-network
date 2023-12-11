@@ -1,6 +1,7 @@
 stages:
   - install
   - lint
+  - document
   - test
   - build
 
@@ -29,21 +30,34 @@ lint-job:
     untracked: true
     when: on_success
 
-test-job:
-  stage: test
+doc-job:
+  stage: documentation
   script:
-    - echo "Testing..."
-    #- npm ci --production=false
-    #- uri=$TEST_DATABASE npm run test
-    - echo "MY_VARIABLE:$TEST_DATABASE"
-    - npm install
-    - npm run test
+    - echo "Documenting..."
+    - npm run doc
   artifacts:
-    name: "test"
+    name: "documentation"
     paths:
-      - testArtifacts/
+      - docs/*
     untracked: true
     when: on_success
+
+
+#test-job:
+#  stage: test
+#  script:
+#    - echo "Testing..."
+#    #- npm ci --production=false
+#    #- uri=$TEST_DATABASE npm run test
+#    - echo "MY_VARIABLE:$TEST_DATABASE"
+#    - npm install
+#    - npm run test
+#  artifacts:
+#    name: "test"
+#    paths:
+#      - testArtifacts/
+#    untracked: true
+#    when: on_success
 
 build-job:
   stage: build
