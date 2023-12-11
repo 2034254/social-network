@@ -1,8 +1,7 @@
 stages:
   - install
   - lint
-  - document
-  - test
+  - documentation
   - build
 
 variables:
