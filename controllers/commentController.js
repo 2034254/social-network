@@ -17,6 +17,15 @@ function arrayRemove(array, value) {
   });
 }
 
+/**
+ * POST /addComment route. Adds a comment to a post and handles notifications.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Object} response - Comment data
+ * @throws {Error} 400 status code if the post or user doesn't exist, or there's an error during the process
+ */
 exports.addComment = (req, res) => {
   //notificationHandler.sendCommentMentionNotification(req, values);
 
@@ -249,6 +258,15 @@ exports.getCommentsForPost = (req, res) => {
     });
 };
 
+/**
+ * POST /addCommentReply route. Adds a reply to a comment and handles notifications.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Object} response - Comment reply data
+ * @throws {Error} 400 status code if the comment or user doesn't exist, or there's an error during the process
+ */
 exports.addCommentReply = (req, res) => {
   Comment.findById({ _id: req.body.commentId })
     .then(comment => {

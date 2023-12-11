@@ -11,7 +11,8 @@
     "lint": "npx eslint . --format html --output-file ./lintArtifact/eslint-report.html",
     "dev-lint": "npx eslint . --fix",
     "build": "",
-    "bundle": ""
+    "bundle": "",
+    "doc": "npx jsdoc -c jsdoc.json -r"
   },
   "dependencies": {
     "@hapi/joi": "^16.1.8",

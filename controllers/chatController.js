@@ -54,6 +54,16 @@ const upload = multer({
   }
 }).single("photo");
 
+/**
+ * Middleware for handling file uploads.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ * @param {Function} next - Express next middleware function
+ *
+ * @returns {void}
+ * @throws {Error} 400 status code if there's an error during the upload or if no file is provided
+ */
 exports.upload = (req, res, next) => {
   upload(req, res, err => {
     if (err) {
@@ -69,6 +79,15 @@ exports.upload = (req, res, next) => {
   });
 };
 
+/**
+ * POST /createImageMessage route. Creates and saves an image message.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Object} message - Created image message
+ * @throws {Error} 500 status code if there's an internal server error
+ */
 exports.createImageMessage = (req, res) => {
   new Message({
     roomId: req.body.roomId,
@@ -101,6 +120,15 @@ exports.createImageMessage = (req, res) => {
     });
 };
 
+/**
+ * GET /chat-rooms route. Returns a list of chat rooms for the authenticated user.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Array} rooms - List of chat rooms
+ * @throws {Error} 500 status code if there's an internal server error
+ */
 exports.getChatRooms = (req, res) => {
   ChatRoom.getRooms(mongoose.Types.ObjectId(req.userData.userId))
     .then(rooms => {
@@ -112,6 +140,15 @@ exports.getChatRooms = (req, res) => {
     });
 };
 
+/**
+ * GET /messages route. Retrieves messages for a specific chat room.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Array} messages - List of messages for the specified room
+ * @throws {Error} 500 status code if there's an internal server error
+ */
 exports.getMessagesForRoom = (req, res) => {
   let query = null;
   if (req.body.initialFetch) {
@@ -140,6 +177,15 @@ exports.getMessagesForRoom = (req, res) => {
     });
 };
 
+/**
+ * POST /sendMessage route. Creates and saves a text message.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Object} message - Created text message
+ * @throws {Error} 500 status code if there's an internal server error
+ */
 exports.sendMessage = (req, res) => {
   new Message({
     roomId: req.body.roomId,
@@ -172,6 +218,15 @@ exports.sendMessage = (req, res) => {
     });
 };
 
+/**
+ * POST /readMessages route. Marks specified messages as read.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Object} response - Confirmation of read messages
+ * @throws {Error} 500 status code if there's an internal server error
+ */
 exports.readMessages = (req, res) => {
   const receiverId = req.room.members.filter(
     member => member.toString().trim() !== req.userData.userId.toString().trim()
@@ -198,6 +253,15 @@ exports.readMessages = (req, res) => {
     });
 };
 
+/**
+ * POST /handleCall route. Handles incoming call and notifies relevant parties.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Object} response - Empty response object
+ * @throws {Error} 500 status code if there's an internal server error
+ */
 exports.handleCall = (req, res) => {
   User.findById(req.userData.userId)
     .select("profilePicture username")
@@ -216,6 +280,15 @@ exports.handleCall = (req, res) => {
   res.status(200).json({});
 };
 
+/**
+ * POST /answer route. Handles an answer to an incoming call and notifies relevant parties.
+ *
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ *
+ * @returns {Object} response - Empty response object
+ * @throws {Error} 500 status code if there's an internal server error
+ */
 exports.answer = (req, res) => {
   const userId = req.room.members.filter(
     userId => userId.toString().trim() !== req.userData.userId.toString().trim()
