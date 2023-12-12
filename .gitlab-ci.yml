@@ -1,21 +1,20 @@
 stages:
   - install
   - lint
-  - documentation
+  - document
   - build
-
-variables:
-  TEST_DATABASE: "mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test"
+  - deploy
 
 cache:
   paths:
     - node_modules/
+    - client/node_modules/
 
 install-job:
   stage: install
   script:
     - npm ci
-    - cd client && npm ci
+    - cd ./client && npm ci
 
 lint-job:
   stage: lint
@@ -30,33 +29,16 @@ lint-job:
     when: on_success
 
 doc-job:
-  stage: documentation
+  stage: document
   script:
     - echo "Documenting..."
     - npm run doc
   artifacts:
-    name: "documentation"
+    name: "document"
     paths:
       - ./docs/docArtifact
     untracked: true
     when: on_success
-
-
-#test-job:
-#  stage: test
-#  script:
-#    - echo "Testing..."
-#    #- npm ci --production=false
-#    #- uri=$TEST_DATABASE npm run test
-#    - echo "MY_VARIABLE:$TEST_DATABASE"
-#    - npm install
-#    - npm run test
-#  artifacts:
-#    name: "test"
-#    paths:
-#      - testArtifacts/
-#    untracked: true
-#    when: on_success
 
 build-job:
   stage: build
@@ -69,3 +51,10 @@ build-job:
     paths:
       - dist/bundle.zip
     untracked: true
+
+deploy-job:
+  stage: deploy
+  script: 
+    - echo "Deploying..."
+    - npm run deploy
+  

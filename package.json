@@ -12,7 +12,8 @@
     "dev-lint": "npx eslint . --fix",
     "build":"cd client && npm run build",
     "bundle": "powershell -Command \"Remove-Item -Force bundle.zip ; & 'C:\\Program Files\\7-Zip\\7z.exe' a -tzip bundle.zip * -x!docs\\* -x!lintArtifact\\* -x!node_modules\\* -x!client\\*\"",
-    "doc": "npx jsdoc -c jsdoc.json -r"
+    "doc": "npx jsdoc -c jsdoc.json -r",
+    "deploy": ""
   },
   "dependencies": {
     "@hapi/joi": "^16.1.8",
