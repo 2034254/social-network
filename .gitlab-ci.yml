@@ -53,9 +53,9 @@ build-job:
       - dist/bundle.zip
     untracked: true
 
-deploy-job:
-  stage: deploy
-  script: 
-    - echo "Deploying..."
-    - npm run deploy
+# deploy-job:
+#   stage: deploy
+#   script: 
+#     - echo "Deploying..."
+#     - npm run deploy
   
