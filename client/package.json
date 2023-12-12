@@ -57,6 +57,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "eslint": "^8.55.0",
     "react-test-renderer": "^16.13.1"
   }
 }
