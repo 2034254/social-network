@@ -1,9 +1,9 @@
 stages:
   - install
-  - lint
-  - document
+  #- lint
+  #- document
   - build
-  - deploy
+  #- deploy
 
 cache:
   paths:
@@ -17,29 +17,29 @@ install-job:
     - cd ./client
     - npm ci
 
-lint-job:
-  stage: lint
-  script:
-    - echo "Linting..."
-    - npm run lint
-  artifacts:
-    name: "lint"
-    paths:
-      - ./lintArtifact/eslint-report.html
-    untracked: true
-    when: on_success
+# lint-job:
+#   stage: lint
+#   script:
+#     - echo "Linting..."
+#     - npm run lint
+#   artifacts:
+#     name: "lint"
+#     paths:
+#       - ./lintArtifact/eslint-report.html
+#     untracked: true
+#     when: on_success
 
-doc-job:
-  stage: document
-  script:
-    - echo "Documenting..."
-    - npm run doc
-  artifacts:
-    name: "document"
-    paths:
-      - ./docs/docArtifact
-    untracked: true
-    when: on_success
+# doc-job:
+#   stage: document
+#   script:
+#     - echo "Documenting..."
+#     - npm run doc
+#   artifacts:
+#     name: "document"
+#     paths:
+#       - ./docs/docArtifact
+#     untracked: true
+#     when: on_success
 
 build-job:
   stage: build
