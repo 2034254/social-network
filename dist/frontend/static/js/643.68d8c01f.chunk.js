@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksocial_network_client=self.webpackChunksocial_network_client||[]).push([[643],{42643:(e,n,t)=>{t.r(n),t.d(n,{default:()=>c});var o=t(72791),s=t(72898);class c extends o.Component{constructor(){super(...arguments),this.componentDidMount=()=>{document.title="Page not found | social-network"}}render(){return(0,s.jsx)("div",{className:"container",children:(0,s.jsx)("div",{style:{fontSize:"4rem",fontWeight:"900",color:"#262626"},children:"Page Not Found"})})}}}}]);
+//# sourceMappingURL=643.68d8c01f.chunk.js.map
