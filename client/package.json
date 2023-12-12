@@ -41,7 +41,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "build": "set GENERATE_SOURCEMAP=false && react-scripts build && npm run post_build",
+    "post_build": "powershell -Command \"Copy-Item -Recurse -Path build\\* -Destination ..\\dist\\frontend\\ -Force\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

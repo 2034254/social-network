@@ -10,8 +10,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "lint": "npx eslint . --format html --output-file ./lintArtifact/eslint-report.html",
     "dev-lint": "npx eslint . --fix",
-    "build": "",
-    "bundle": "",
+    "build":"cd client && npm run build",
+    "bundle": "powershell -Command \" & 'C:\\Program Files\\7-Zip\\7z.exe' a -tzip bundle.zip * -x!docs\\* -x!lintArtifact\\* -x!node_modules\\* -x!client\\*\"",
     "doc": "npx jsdoc -c jsdoc.json -r"
   },
   "dependencies": {
