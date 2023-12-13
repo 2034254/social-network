@@ -1,21 +1,21 @@
 stages:
-  #- install
+  - install
   #- lint
   #- document
   #- build
   - deploy
 
-# cache:
-#   paths:
-#     - node_modules/
-#     - client/node_modules/
+cache:
+  paths:
+    - node_modules/
+    - client/node_modules/
 
-# install-job:
-#   stage: install
-#   script:
-#     - npm ci
-#     - cd ./client
-#     - npm ci
+install-job:
+  stage: install
+  script:
+    - npm ci
+    - cd ./client
+    - npm ci
 
 # lint-job:
 #   stage: lint
