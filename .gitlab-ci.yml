@@ -1,8 +1,8 @@
 stages:
-  #- install
-  #- lint
-  #- document
-  #- build
+  # - install
+  # - lint
+  # - document
+  # - build
   - deploy
 
 # cache:
@@ -57,8 +57,5 @@ deploy-job:
   stage: deploy
   script: 
     - echo "Deploying..."
-    - echo "AWS_ACCESS_KEY_ID $AWS_ACCESS_KEY_ID"
-    - echo "AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY"
-    - aws configure list  # Print AWS CLI configuration for debugging
     - npm run deploy
   
