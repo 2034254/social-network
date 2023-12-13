@@ -16,7 +16,7 @@
     "uploadToS3": "aws s3 cp bundle.zip s3://munir.com/bundle/",
     "preDeploy-1": "aws elasticbeanstalk create-application-version --application-name Social-Network --version-label version-18 --source-bundle S3Bucket=munir.com,S3Key=bundle/bundle.zip",
     "preDeploy-2": "aws elasticbeanstalk update-environment --environment-name Social-Network-env --version-label version-18",
-    "deploy": "npm run uploadToS3 && npm run preDeploy-1 && npm run preDeploy-2"
+    "deploy": "npm run uploadToS3 && npm run preDeploy-1 && npm run preDeploy-2" 
   },
   "dependencies": {
     "@hapi/joi": "^16.1.8",
