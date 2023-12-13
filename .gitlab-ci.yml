@@ -55,12 +55,7 @@ stages:
 
 deploy-job:
   stage: deploy
-  before_script:
-    - apt-get install -y awscli  # Install AWS CLI
-    - aws --version  # Print AWS CLI version for debugging
   script: 
-    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-    - aws configure list  # Print AWS CLI configuration for debugging
+    - echo "Deploying..."
     - npm run deploy
   
