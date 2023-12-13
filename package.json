@@ -14,8 +14,8 @@
     "bundle": "powershell -Command \"Remove-Item -Force bundle.zip ; & 'C:\\Program Files\\7-Zip\\7z.exe' a -tzip bundle.zip * -x!documentation\\* -x!lintArtifact\\* -x!node_modules\\* -x!client\\* -xr!documentation -xr!lintArtifact -xr!node_modules -xr!client\"",
     "doc": "npx jsdoc -c jsdoc.json -r",
     "uploadToS3": "aws s3 cp bundle.zip s3://munir.com/bundle/",
-    "preDeploy-1": "aws elasticbeanstalk create-application-version --application-name Social-Network --version-label version-10 --source-bundle S3Bucket=munir.com,S3Key=bundle/bundle.zip",
-    "preDeploy-2": "aws elasticbeanstalk update-environment --environment-name Social-Network-env --version-label version-10",
+    "preDeploy-1": "aws elasticbeanstalk create-application-version --application-name Social-Network --version-label version-11 --source-bundle S3Bucket=munir.com,S3Key=bundle/bundle.zip",
+    "preDeploy-2": "aws elasticbeanstalk update-environment --environment-name Social-Network-env --version-label version-11",
     "deploy": "npm run uploadToS3 && npm run preDeploy-1 && npm run preDeploy-2"
   },
   "dependencies": {
