@@ -52,7 +52,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "http://notesapi-env.eba-3m2m3cqb.us-east-1.elasticbeanstalk.com/",
   "browserslist": [
     ">0.2%",
     "not dead",
