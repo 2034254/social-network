@@ -1,8 +1,8 @@
 stages:
-  - install
+  #- install
   #- lint
   #- document
-  #- build
+  - build
   - deploy
 
 cache:
@@ -10,12 +10,12 @@ cache:
     - node_modules/
     - client/node_modules/
 
-install-job:
-  stage: install
-  script:
-    - npm ci
-    - cd ./client
-    - npm ci
+# install-job:
+#   stage: install
+#   script:
+#     - npm ci
+#     - cd ./client
+#     - npm ci
 
 # lint-job:
 #   stage: lint
@@ -41,17 +41,17 @@ install-job:
 #     untracked: true
 #     when: on_success
 
-# build-job:
-#   stage: build
-#   script: 
-#     - echo "Building..."
-#     - npm run build
-#     - npm run bundle
-#   artifacts:
-#     name: "build"
-#     paths:
-#       - ./
-#     untracked: true
+build-job:
+  stage: build
+  script: 
+    - echo "Building..."
+    - npm run build
+    - npm run bundle
+  artifacts:
+    name: "build"
+    paths:
+      - ./
+    untracked: true
 
 deploy-job:
   stage: deploy
