@@ -1,10 +1,10 @@
 # social-network
 
-Mini social network that I made as my first web app project.
+Mini social network for deployment purpose for our final project in Transactional web application 2 course.
 
-## Demo
+## Endpoint
 
-[social-network](http://46.101.189.55/login)
+http://social-network-env.eba-3tceqtv6.us-east-1.elasticbeanstalk.com/login
 
 ## Screenshots
 
@@ -26,9 +26,6 @@ Mini social network that I made as my first web app project.
 
 ![](<screenshots/ezgif.com-video-to-gif%20(1).gif>)
 
-## Link to a full video
-
-[Video](https://streamable.com/5srsv)
 
 ## Built With
 
@@ -64,7 +61,7 @@ Mini social network that I made as my first web app project.
 npm i && cd client && npm i && cd ..
 ```
 
-2. Create variables.env file and replace values with yours
+2. Create variables.env file in the root folder of project and copy and paste these variables into
 
 ```
 NODE_ENV=development
@@ -74,21 +71,14 @@ EMAILUSER="example@gmail.com"
 EMAILPASS="example"
 HOST="localhost:5000"
 ENABLE_SEND_EMAIL="false"
-TEST_DATABASE="mongodb://localhost:27017/test"
+TEST_DATABASE="mongodb+srv://munirkhaliqyar:2vmJgN0QHO0wDFfJ@cluster0.k5q7web.mongodb.net/test"
 ```
 
-```3. Go into `client/src/_services/socketService.js` and replace```
+3. Create variables.env file in client/ folder and copy and paste thid variable into
 
 ```
-# window.location.hostname
+SKIP_PREFLIGHT_CHECK=true
 ```
-
-with your local IP address on port 5000 eg.
-
-```
-192.168.0.14:5000
-```
-
 4. Run project
 
 ```

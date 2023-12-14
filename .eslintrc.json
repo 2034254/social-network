@@ -18,5 +18,5 @@
     "rules": {
         "no-unused-vars": ["warn", { "varsIgnorePattern": "value|user"}]
     },
-    "ignorePatterns": ["client/", "documentation/", "lintArtifact/", "dist/"]
+    "ignorePatterns": ["client/", "documentation/", "lintArtifact/", "dist/", "docs/"]
 }

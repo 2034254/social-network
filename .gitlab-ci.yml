@@ -26,6 +26,9 @@ lint-job:
     name: "lint"
     paths:
       - ./lintArtifact/eslint-report.html
+    exclude:
+      - node_modules/*
+      - client/node_modules/*
     untracked: true
     when: on_success
 
@@ -35,9 +38,12 @@ doc-job:
     - echo "Documenting..."
     - npm run doc
   artifacts:
-    name: "document"
+    name: "documentation"
     paths:
-      - ./documentation/*
+      - ./docs/*
+    exclude:
+      - node_modules/*
+      - client/node_modules/*
     untracked: true
     when: on_success
 
@@ -50,8 +56,12 @@ build-job:
   artifacts:
     name: "build"
     paths:
-      - ./
+      - ./*
+    exclude:
+      - node_modules/*
+      - client/node_modules/*
     untracked: true
+  when: on_success
 
 deploy-job:
   stage: deploy
