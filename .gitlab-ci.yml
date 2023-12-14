@@ -29,7 +29,7 @@ lint-job:
     exclude:
       - node_modules/*
       - client/node_modules/*
-    untracked: true
+    untracked: false
     when: on_success
 
 doc-job:
@@ -44,7 +44,7 @@ doc-job:
     exclude:
       - node_modules/*
       - client/node_modules/*
-    untracked: true
+    untracked: false
     when: on_success
 
 build-job:
